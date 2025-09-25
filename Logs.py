@@ -1,22 +1,37 @@
-import tkinter as tk
+# import tkinter as tk
 
-logs = tk.Tk ()
-logs.title("Mans logs")
-logs.geometry("300x400")
+# logs = tk.Tk ()
+# logs.title("Mans logs")
+# logs.geometry("300x400")
 
-def paradi_ievadi():
-    teksts.config(text = "Tu ierakstīji: " + ievade.get())
+# def saskaiti_skatlus():
+#     teksts = ievade.get()
+#     teksts2 = ievade2.get()
 
-tk.Label(logs, text = "Ieraksti kaut ko:").pack()
+#     skaitlis = int(teksts)
+#     skaitlis2 = int(teksts2)
+    
+#     summa = skaitlis + skaitlis2
 
-ievade = tk.Entry(logs)
-ievade.pack()
+#     label_rezultats.config(text=f"Summa: {summa}")
 
-poga = tk.Button(logs, text = "Parādīt tekstu",
-                command = paradi_ievadi)
-poga.pack()
+# tk.Label(logs, text = "Pirmais skaitlis:").pack()
 
-teksts = tk.Label(logs, text = "")
-teksts.pack()
+# ievade = tk.Entry(logs)
+# ievade.pack()
 
-logs.mainloop()
+
+# tk.Label(logs, text = "Otrais skaitlis:").pack()
+
+# ievade2 = tk.Entry(logs)
+# ievade2.pack()
+
+# poga = tk.Button(logs, text = "Aprēķināt",
+#                 command = saskaiti_skatlus)
+# poga.pack()
+
+# label_rezultats = tk.Label(logs, text = "")
+# label_rezultats.pack()
+
+
+# logs.mainloop()

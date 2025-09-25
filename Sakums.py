@@ -32,7 +32,7 @@
 #                  command=teksta_lauks1
 #                  )
 # poga2.pack()
-
+# # 
 # exit_button= tk.Button(
 #     logs,
 #     text="exit",
