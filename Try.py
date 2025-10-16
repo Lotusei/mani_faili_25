@@ -42,51 +42,53 @@
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-import tkinter as tk
+# import tkinter as tk
 
-from tkinter import messagebox
+# from tkinter import messagebox
 
 
-logs = tk.Tk ()
-logs.title("Mans logs")
-logs.geometry("300x400")
+# logs = tk.Tk ()
+# logs.title("Kalkulātors")
+# logs.geometry("300x400")
 
-def saskaiti_skatlus():
-    try: 
-        a = float(ievade.get())
-        b = float(ievade2.get())
+# tk.Label(logs, text="Ievadi skaitļus!").pack(pady=3)
+
+# def saskaiti_skatlus():
+#     try: 
+#         a = float(ievade.get())
+#         b = float(ievade2.get())
             
-        rezultats = a / b
+#         rezultats = a / b
 
-        label_rezultats.config(text=f"Summa: {rezultats}")
-        messagebox.showerror("Rezultāts!",f"Atbilde: {rezultats}!")
+#         label_rezultats.config(text=f"Summa: {rezultats}")
+#         messagebox.showerror("Rezultāts!",f"Atbilde: {rezultats}!")
 
-    except ValueError: 
-        messagebox.showerror("Kļūda!","Kļūdas ziņojums šeit!")
-    except ZeroDivisionError: 
-        messagebox.showerror("Kļūda!","Ar nulli nevar dalīt!")
+#     except ValueError: 
+#         messagebox.showerror("Kļūda!","Kļūdas ziņojums šeit!")
+#     except ZeroDivisionError: 
+#         messagebox.showerror("Kļūda!","Ar nulli nevar dalīt!")
 
-tk.Label(logs, text = "Dalāmais:").pack()
+# tk.Label(logs, text = "Dalāmais:").pack()
 
-ievade = tk.Entry(logs)
-ievade.pack()
+# ievade = tk.Entry(logs)
+# ievade.pack()
 
 
-tk.Label(logs, text = "Dalītājs:").pack()
+# tk.Label(logs, text = "Dalītājs:").pack()
 
-ievade2 = tk.Entry(logs)
-ievade2.pack()
+# ievade2 = tk.Entry(logs)
+# ievade2.pack()
 
-poga = tk.Button(logs, text = "Aprēķināt",
-                command = saskaiti_skatlus)
-poga.pack()
+# poga = tk.Button(logs, text = "Aprēķināt",
+#                 command = saskaiti_skatlus)
+# poga.pack()
 
-label_rezultats = tk.Label(logs, text = "")
-label_rezultats.pack()
+# label_rezultats = tk.Label(logs, text = "")
+# label_rezultats.pack()
 
-attels_objekts = tk.PhotoImage(file='zvaigzne.png')
-attela_konteineris = tk.Label(logs, image=attels_objekts)
-attela_konteineris.image = attels_objekts
-attela_konteineris.pack(pady=20)
+# attels_objekts = tk.PhotoImage(file='zvaigzne.png')
+# attela_konteineris = tk.Label(logs, image=attels_objekts)
+# attela_konteineris.image = attels_objekts
+# attela_konteineris.pack(pady=20)
 
-logs.mainloop()
+# logs.mainloop()
