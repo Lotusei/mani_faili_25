@@ -65,8 +65,8 @@ ievade2.pack()
 
 #Izveido pogu, kuru uzspiežot izvet rezultātu vai kļūdas
 poga = tk.Button(logs, text = '''Aprēķināt''',
-                 font = ('Arial',10 , 'bold'),
-                fg = "Red",
+                font = ('Arial',10 , 'bold'),
+                fg = "Red"
                 command = saskaiti_skatlus)
 poga.pack()
 
