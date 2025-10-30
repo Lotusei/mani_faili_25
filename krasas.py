@@ -26,57 +26,57 @@
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-import tkinter as tk
-from tkinter import messagebox
+# import tkinter as tk
+# from tkinter import messagebox
 
-# Galvenais logs
-root = tk.Tk()
-root.title("Slider Piemērs")
-root.geometry("300x450")
+# # Galvenais logs
+# root = tk.Tk()
+# root.title("Slider Piemērs")
+# root.geometry("300x450")
 
-# Funkcija, kas parāda slīdņa vērtību
-def paradit_vertibu():
-    sarkans = red.get()
-    zils = blue.get()
-    dzeltens = yellow.get()
-    messagebox.showinfo("RGB vērtība", f"Sarkanā vērtība ir: {sarkans}. \nZilā vērtība ir: {zils}. \nDzeltenā vērtība ir: {dzeltens}.")
+# # Funkcija, kas parāda slīdņa vērtību
+# def paradit_vertibu():
+#     sarkans = red.get()
+#     zils = blue.get()
+#     dzeltens = yellow.get()
+#     messagebox.showinfo("RGB vērtība", f"Sarkanā vērtība ir: {sarkans}. \nZilā vērtība ir: {zils}. \nDzeltenā vērtība ir: {dzeltens}.")
 
-def krasu_maina(event):
-    try: 
-        sarkans = red.get()
-        zils = blue.get()
-        dzeltens = yellow.get()
+# def krasu_maina(event):
+#     try: 
+#         sarkans = red.get()
+#         zils = blue.get()
+#         dzeltens = yellow.get()
 
-        hex_kods = f"#{sarkans:02x}{zils:02x}{dzeltens:02x}"
+#         hex_kods = f"#{sarkans:02x}{zils:02x}{dzeltens:02x}"
 
-        krasas_paraugs.config(bg = hex_kods)
+#         krasas_paraugs.config(bg = hex_kods)
 
-    except Exception as e:
-        print(f"Notikusi kļūda: {e}")
-
-
-# Etiķete
-tk.Label(root, text="Izvēlieties katras krāsas vērtību (0-255):").pack(pady=10)
-
-# Slider (Scale) izveide
-
-red = tk.Scale(root, from_=0, to=255, orient=tk.HORIZONTAL)
-red.pack(pady=0, padx=20, fill='x')
-tk.Label(root, text="Sarkans").pack(pady=2)
+#     except Exception as e:
+#         print(f"Notikusi kļūda: {e}")
 
 
-blue = tk.Scale(root, from_=0, to=255, orient=tk.HORIZONTAL)
-blue.pack(pady=5, padx=20, fill='x')
-tk.Label(root, text="Zils").pack(pady=2)
+# # Etiķete
+# tk.Label(root, text="Izvēlieties katras krāsas vērtību (0-255):").pack(pady=10)
 
-yellow = tk.Scale(root, from_=0, to=255, orient=tk.HORIZONTAL)
-yellow.pack(pady=5, padx=20, fill='x')
-tk.Label(root, text="Dzeltens").pack(pady=2)
+# # Slider (Scale) izveide
+
+# red = tk.Scale(root, from_=0, to=255, orient=tk.HORIZONTAL)
+# red.pack(pady=0, padx=20, fill='x')
+# tk.Label(root, text="Sarkans").pack(pady=2)
 
 
-krasas_paraugs= tk.Label(root, width= 30, height= 10, bg = "black").pack(pady=10)
+# blue = tk.Scale(root, from_=0, to=255, orient=tk.HORIZONTAL)
+# blue.pack(pady=5, padx=20, fill='x')
+# tk.Label(root, text="Zils").pack(pady=2)
 
-# Poga apstiprināšanai
-tk.Button(root, text="Apstiprināt", command=paradit_vertibu).pack(pady=10)
+# yellow = tk.Scale(root, from_=0, to=255, orient=tk.HORIZONTAL)
+# yellow.pack(pady=5, padx=20, fill='x')
+# tk.Label(root, text="Dzeltens").pack(pady=2)
 
-root.mainloop()
+
+# krasas_paraugs= tk.Label(root, width= 30, height= 10, bg = "black").pack(pady=10)
+
+# # Poga apstiprināšanai
+# tk.Button(root, text="Apstiprināt", command=paradit_vertibu).pack(pady=10)
+
+# root.mainloop()
