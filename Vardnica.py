@@ -77,24 +77,82 @@
 
 # 3.uzd ------------------------------------------------------------
 
-cars = {
-    "Ford" : 1951,  
-    "Opel" : 1991,
-    "Audi" : 2002,  
-    "Tesla" : 2017,
-    "BMW" :2005
-}
+# cars = {
+#     "Ford" : 1951,  
+#     "Opel" : 1991,
+#     "Audi" : 2002,  
+#     "Tesla" : 2017,
+#     "BMW" :2005
+# }
 
-for x,y in cars.items():
-    print(x,y)
+# for x,y in cars.items():
+#     print(x,y)
 
-if "Audi" in cars:
-  print("Yes, 'Audi' is one of the keys in the thisdict dictionary")
-else:
-  print("No, 'Audi' is not one of the keys in the thisdict dictionary")
+# if "Audi" in cars:
+#   print("Yes, 'Audi' is one of the keys in the thisdict dictionary")
+# else:
+#   print("No, 'Audi' is not one of the keys in the thisdict dictionary")
 
-for x,y in cars.items():
-    if y > 2010:
-       print(x)
-    else:
-       pass
+# for x,y in cars.items():
+#     if y > 2010:
+#        print(x)
+#     else:
+#        pass
+
+# 8.uzd ------------------------------------------------------------
+
+# kinoteatrs = {
+#     "Filmas": {
+#         "Dune": {
+#             "Gads": 2021,
+#             "Režisors": "Deniss Viļņevs",
+#             "Žanrs": "Zinātniskā fantastika",
+#             "Galvenie aktieri": ["Timotijs Šalamē", "Rebeka Fērgusone"]
+#         },
+#         "Interstellar": {
+#             "Gads": 2014,
+#             "Režisors": "Kristofers Nolans",
+#             "Žanrs": "Zinātniskā fantastika",
+#             "Galvenie aktieri": ["Metjū Makonehijs", "Anna Hataveja"]
+#         },
+#         "The Matrix": {
+#             "Gads": 1999,
+#             "Režisors": "Vačovski māsas",
+#             "Žanrs": "Kiberpanks",
+#             "Galvenie aktieri": ["Kianu Rīvss", "Lorenss Fišbērns"]
+#         }
+#     },
+#     "Zāles": ["Zāle A", "Zāle B", "Zāle C"]
+# }
+
+# print(kinoteatrs["Filmas"]["Interstellar"]["Galvenie aktieri"])
+
+# print(kinoteatrs["Filmas"]["The Matrix"]["Režisors"])
+
+# kinoteatrs["Filmas"]["Dune"]["Ilgums"] = "155 minūtes"
+# print(kinoteatrs["Filmas"]["Dune"]["Ilgums"])
+
+
+# 5.uzd ------------------------------------------------------------
+
+# cilveki = {
+#     "persona1" : {
+#         "vārds" : "Anna",
+#         "vecums" : 28,
+#         "pilsēta" : "Rīga"
+#     },
+#     "persona2" : {
+#         "vārds" : "Jānis",
+#         "vecums" : 34,
+#         "pilsēta" : "Liepāja"
+#     },
+#     "persona3" : {
+#         "vārds" : "Ilze",
+#         "vecums" : 25,
+#         "pilsēta" : "Jelgava"
+#     }
+# }
+
+# print(cilveki["persona1"])
+# print(cilveki["persona2"])
+# print(cilveki["persona3"])
