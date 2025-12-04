@@ -17,13 +17,13 @@
 
 # Uzd. 2 ------------------------------------------------------------------------------------------------------------
 
-vards = input("Ievadi savu vārdu: ")
-vecums = input("Ievadi savu vecumu: ")
+# vards = input("Ievadi savu vārdu: ")
+# vecums = input("Ievadi savu vecumu: ")
 
-with open("Teksts2.txt", "a", encoding = 'utf-8') as f:
-  f.write(f"{vards},{vecums}\n")
+# with open("Teksts2.txt", "a", encoding = 'utf-8') as f:
+#   f.write(f"{vards},{vecums}\n")
 
-print("Dati saglabāti!")
+# print("Dati saglabāti!")
 
-with open("Teksts2.txt") as f:
-  print(f.read())
+# with open("Teksts2.txt") as f:
+#   print(f.read())

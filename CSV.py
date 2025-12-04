@@ -23,13 +23,15 @@ import csv
 
 # ----------------------------------------------------------
 
-summa = 0
-skaits = 0
-with open('cilveki.csv',encoding='utf-8') as f:
-    lasītājs = csv.DictReader(f)
-    next (lasītājs)
-    for rinda in lasītājs:
-        summa += int(rinda['vecums'])
-        skaits += 1
-    vid = summa / skaits
-    print(f"Vidējais vecums ir: {vid} gadi")
+# summa = 0
+# skaits = 0
+# with open('cilveki.csv',encoding='utf-8') as f:
+#     lasītājs = csv.DictReader(f)
+#     next (lasītājs)
+#     for rinda in lasītājs:
+#         summa += int(rinda['vecums'])
+#         skaits += 1
+#     vid = summa / skaits
+#     print(f"Vidējais vecums ir: {vid} gadi")
+
+
