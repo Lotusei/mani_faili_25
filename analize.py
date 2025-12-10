@@ -23,12 +23,41 @@ import csv
 
 # otrais.2 --------------------------------------------------------------------------------------------------------------
 
+
+
 # kaut kas cits ---------------------------------------------------------------------------------------------------------
 
-vards = input("Ievadi savu vārdu: ")
-uzvards = input("Ievadi savu uzvardu: ")
-klase = input("Ievadi savu klasi (ciparu): ")
+# vards = input("Vārds: ").capitalize()
+# uzvards = input("Uzvārds ").capitalize()
+# klase = input("Klase: ").upper()
 
-with open('dati2.csv','w', newline='') as f:
-    rakstītājs = csv.writer(f)
-    rakstītājs.writerow([vards,uzvards,klase])
+# with open('dati2.csv','a', newline='', encoding='utf-8') as f:
+#     writer = csv.writer(f)
+#     if f.tell() == 0:
+#         writer.writerow(['Vārds', 'Uzvārds', 'Klase'])
+#     writer.writerow([vards, uzvards, klase])
+# print("Saglabāts!")
+
+# 1. uzd 10.12.2025 --------------------------------------------------------------------------------------------------------------------------
+
+
+# with open('dati2.csv','a', newline='', encoding='utf-8') as f:
+#     writer = csv.writer(f)
+#     if f.tell() == 0:
+#         writer.writerow(['Vārds', 'Uzvārds', 'Klase'])
+#     while True:
+#         vards = input("Vārds: ").strip().capitalize()
+
+#         if vards == "":
+#             print('\nReģistrācija pabeigta')
+#             break
+
+#         uzvards = input("Uzvārds ").strip().capitalize()
+#         klase = input("Klase: ").strip().upper()
+
+#         writer.writerow([vards, uzvards, klase])
+
+# print("Saglabāts!")
+
+# 2. uzd 10.12.2025 --------------------------------------------------------------------------------------------------------------------------
+
