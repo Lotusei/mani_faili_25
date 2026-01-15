@@ -26,40 +26,40 @@
 # 2. daļa ----------------------------------------------------------
 
 # Nolasām visus datus no faila
-while True:
-    produkti = []
+# while True:
+#     produkti = []
 
-    with open('ceks.txt', 'r', encoding='utf-8') as f:
-        reader = f.read
-        next(reader)  # izlaižam virsrakstus (Vārds,Uzvārds,Klase)
+#     with open('ceks.txt', 'r', encoding='utf-8') as f:
+#         reader = f.read
+#         next(reader)  # izlaižam virsrakstus (Vārds,Uzvārds,Klase)
 
-        for rinda in reader:
-            if len(rinda) != 0:           # ja rinda nav tukša
-                produkti.append(rinda)
-        # Ja nav datu
-        if len(produkti) == 0:
-            print("Failā nav produktu. Pievieno vismaz vienu!")
-            break
+#         for rinda in reader:
+#             if len(rinda) != 0:           # ja rinda nav tukša
+#                 produkti.append(rinda)
+#         # Ja nav datu
+#         if len(produkti) == 0:
+#             print("Failā nav produktu. Pievieno vismaz vienu!")
+#             break
             
             
-# nezinu ------------------- zem
-        atrastie = []
-        for produkts in produkti:
+# # nezinu ------------------- zem
+#         atrastie = []
+#         for produkts in produkti:
 
-        if len(atrastie) > 0:
-            print(f"\n=============================================")
-    #         print (atrastie)
-            for s in atrastie:
-                print(f"• {s[0]} {s[1]}")
+#         if len(atrastie) > 0:
+#             print(f"\n=============================================")
+#     #         print (atrastie)
+#             for s in atrastie:
+#                 print(f"• {s[0]} {s[1]}")
                 
-        break
+#         break
 
-# Eksportējam uz atsevišķu failu
-faila_nosaukums = "ceks.txt"
-with open(faila_nosaukums, 'w', newline='', encoding='utf-8') as teksts:
-    writer = teksts.write
-    writer.writelines(['Vārds', 'Uzvārds', 'Klase'])
-    for s in atrastie:
-        writer.writelines(s)
+# # Eksportējam uz atsevišķu failu
+# faila_nosaukums = "ceks.txt"
+# with open(faila_nosaukums, 'w', newline='', encoding='utf-8') as teksts:
+#     writer = teksts.write
+#     writer.writelines(['Vārds', 'Uzvārds', 'Klase'])
+#     for s in atrastie:
+#         writer.writelines(s)
 
-    print(f"\nSaglabāts failā: {faila_nosaukums}")
+#     print(f"\nSaglabāts failā: {faila_nosaukums}")
