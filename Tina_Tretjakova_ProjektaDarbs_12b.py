@@ -4,6 +4,7 @@ def istabu_skaits():
     while True:
         majas = []
 
+# komandas atrod un atlasa mājas ar izvēlēto skaitu guļamistabu
         with open('Maju_cenas.csv', 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             next(reader)  # izlaižam virsrakstus
@@ -33,6 +34,7 @@ def istabu_skaits():
                     
             break
 
+#  mājas ar izvēlēto skaitu guļamistabu tiek eksportētas uz atsevišķu failu
     # Eksportējam uz atsevišķu failu
     faila_nosaukums = mekle_maja + "_istabu_cenas.csv"
     with open(faila_nosaukums, 'w', newline='', encoding='utf-8') as eks:
@@ -43,6 +45,7 @@ def istabu_skaits():
 
         print(f"\nSaglabāts failā: {faila_nosaukums}")
 
+# komandas atrod un atlasa mājas ar izvēlēto skaitu vannasistabu
     while True:
         majas = []
 
@@ -75,8 +78,9 @@ def istabu_skaits():
                     
             break
 
+#  mājas ar izvēlēto skaitu vannasistabām tiek eksportētas uz atsevišķu failu
     # Eksportējam uz atsevišķu failu
-    faila_nosaukums2 = mekle_maja + " + " + mekle_maja2 + "_istabu_cenas.csv"
+    faila_nosaukums2 = mekle_maja + "+" + mekle_maja2 + "_istabu_cenas.csv"
     with open(faila_nosaukums2, 'w', newline='', encoding='utf-8') as eks:
         writer = csv.writer(eks)
         writer.writerow(['cena','kubikmetri','guļamistabas','vannasistabas','sāvi','pie galvenāceļa','viesistabas','pagrabs','apkures katls','gaisa kondicionieris','parkošanās','prefarea','mēbeles'])
@@ -85,7 +89,7 @@ def istabu_skaits():
 
         print(f"\nSaglabāts failā: {faila_nosaukums2}")
 
-
+# komandas atrod un atlasa mājas ar/bez viesistabas
     while True:
         majas = []
 
@@ -119,7 +123,7 @@ def istabu_skaits():
                     
             break
 
-
+#  mājas ar/bez viesistabas tiek eksportētas uz atsevišķu failu
     # Eksportējam uz atsevišķu failu
 
 
@@ -135,7 +139,7 @@ def istabu_skaits():
 def stavu_skaits():
     while True:
         majas = []
-
+# komandas atrod un atlasa mājas ar izvēlēto stāvu skaitu
         with open( 'Maju_cenas.csv', 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             next(reader)  # izlaižam virsrakstus
@@ -164,7 +168,7 @@ def stavu_skaits():
                     print(f"• {s[0]} {s[1]}")
                         
             break
-
+#  mājas ar izvēlēto stāvu skaitu tiek eksportētas uz atsevišķu failu
         # Eksportējam uz atsevišķu failu
     faila_nosaukums = mekle_maja + "_stāviem_cenas.csv"
     with open(faila_nosaukums, 'w', newline='', encoding='utf-8') as eks:
@@ -178,7 +182,7 @@ def stavu_skaits():
 
     while True:
         majas = []
-
+# komandas atrod un atlasa mājas ar/bez pagraba
         with open( faila_nosaukums , 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             next(reader)  # izlaižam virsrakstus
@@ -208,6 +212,7 @@ def stavu_skaits():
                         
             break
 
+#  mājas ar/bez pagraba tiek eksportētas uz atsevišķu failu
         # Eksportējam uz atsevišķu failu
     faila_nosaukums2 = mekle_maja + "+" + mekle_maja2 + "_stāviem_cenas.csv"
     with open(faila_nosaukums2, 'w', newline='', encoding='utf-8') as eks:
@@ -221,6 +226,7 @@ def stavu_skaits():
 def iekartojums():
     while True:
         majas = []
+# komandas atrod un atlasa mājas ar/pa pusei/bez mēbelēm 
 
         with open( 'Maju_cenas.csv', 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
@@ -251,6 +257,7 @@ def iekartojums():
                         
             break
 
+#  mājas ar/pa pusei/bez mēbelēm tiek eksportētas uz atsevišķu failu
         # Eksportējam uz atsevišķu failu
     faila_nosaukums = mekle_maja + "_iekartojums_cenas.csv"
     with open(faila_nosaukums, 'w', newline='', encoding='utf-8') as eks:
@@ -264,7 +271,7 @@ def iekartojums():
 
     while True:
         majas = []
-
+# komandas atrod un atlasa mājas ar/bez apkures katla
         with open( faila_nosaukums, 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             next(reader)  # izlaižam virsrakstus
@@ -294,6 +301,7 @@ def iekartojums():
                         
             break
 
+#  mājas ar/bez apkures katla tiek eksportētas uz atsevišķu failu
         # Eksportējam uz atsevišķu failu
     faila_nosaukums2 = mekle_maja2 + "+" + mekle_maja + "_iekartojums_cenas.csv"
     with open(faila_nosaukums2, 'w', newline='', encoding='utf-8') as eks:
@@ -306,7 +314,7 @@ def iekartojums():
 
     while True:
         majas = []
-
+# komandas atrod un atlasa mājas ar/bez kondicioniera
         with open( faila_nosaukums2, 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             next(reader)  # izlaižam virsrakstus
@@ -336,6 +344,7 @@ def iekartojums():
                         
             break
 
+#  mājas ar/bez kondicioniera tiek eksportētas uz atsevišķu failu
         # Eksportējam uz atsevišķu failu
     faila_nosaukums3 = mekle_maja3 + "+" + mekle_maja2 + "+" + mekle_maja + "_iekartojums_cenas.csv"
     with open(faila_nosaukums3, 'w', newline='', encoding='utf-8') as eks:
@@ -358,7 +367,7 @@ while True:
   if izvēle == '1':
     istabu_skaits()
   elif izvēle == '2':
-    stavi_skaits()
+    stavu_skaits()
   elif izvēle == '3':
     iekartojums()
   elif izvēle == '4':
