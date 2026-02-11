@@ -1,10 +1,10 @@
-import sqlite3
+# import sqlite3
 
-# Connect to SQLite and create a database file
-conn = sqlite3.connect('auto_tirgus.db')
+# # Connect to SQLite and create a database file
+# conn = sqlite3.connect('auto_tirgus.db')
 
-# Create a cursor object using the connection
-cursor = conn.cursor()
+# # Create a cursor object using the connection
+# cursor = conn.cursor()
 
 # Create a new table named 'friends' /nevar būt vienlaicīgi ar otru/ "add a friend"
 # cursor.execute('''
@@ -85,34 +85,34 @@ cursor = conn.cursor()
 
 
 
-cursor.execute("SELECT * FROM auto WHERE gads = 2020")
+# cursor.execute("SELECT * FROM auto WHERE gads = 2020")
 
 # Fetch and print the results
-count = 0
-results = cursor.fetchall()
-print('Automašīnas, kas izlaistas 2020. gadā:')
-for row in results:
-    count += 1
-    print(row)
-print(f'Kopā atrasts: {count} automašīnas')
+# count = 0
+# results = cursor.fetchall()
+# print('Automašīnas, kas izlaistas 2020. gadā:')
+# for row in results:
+#     count += 1
+#     print(row)
+# print(f'Kopā atrasts: {count} automašīnas')
 
 
-cursor.execute("SELECT * FROM auto WHERE nobraukums BETWEEN 50000 AND 100000")
+# cursor.execute("SELECT * FROM auto WHERE nobraukums BETWEEN 50000 AND 100000")
 
-# Fetch and print the results
-count = 0
-results = cursor.fetchall()
-print('Automašīnas ar nobraukumu 50000-100000 km:')
-for row in results:
-    count += 1
-    print(row)
-print(f'Kopā atrasts: {count} automašīnas')
-
-
+# # Fetch and print the results
+# count = 0
+# results = cursor.fetchall()
+# print('Automašīnas ar nobraukumu 50000-100000 km:')
+# for row in results:
+#     count += 1
+#     print(row)
+# print(f'Kopā atrasts: {count} automašīnas')
 
 
-# Add a auto's information
-# cursor.execute('''INSERT INTO friends (id, Marka, Modelis, gads, nobraukums) VALUES ('Alice', 16, 'Reading', '123-456-7890')''')
 
-# # Save (commit) the changes
-conn.commit()
+
+# # Add a auto's information
+# # cursor.execute('''INSERT INTO friends (id, Marka, Modelis, gads, nobraukums) VALUES ('Alice', 16, 'Reading', '123-456-7890')''')
+
+# # # Save (commit) the changes
+# conn.commit()
