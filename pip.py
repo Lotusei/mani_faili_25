@@ -42,14 +42,14 @@ import requests
 #         print(data['setup'])
 #         print(data['delivery'])
 
-kategorija = input("Izvēlies joka kategoriju! (Programming/Misc/Dark/Pun/Spooky/Christmas): ")
+# kategorija = input("Izvēlies joka kategoriju! (Programming/Misc/Dark/Pun/Spooky/Christmas): ")
 
-response = requests.get(f"https://v2.jokeapi.dev/joke/{kategorija}")
+# response = requests.get(f"https://v2.jokeapi.dev/joke/{kategorija}")
 
-data = response.json()
+# data = response.json()
 
-if data['type'] == 'single':
-    print (data['joke'])
-else:
-    print(data['setup'])
-    print(data['delivery'])
+# if data['type'] == 'single':
+#     print (data['joke'])
+# else:
+#     print(data['setup'])
+#     print(data['delivery'])
