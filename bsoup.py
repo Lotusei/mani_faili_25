@@ -61,13 +61,13 @@ soup = BeautifulSoup(response.text, 'lxml')
 
 # 5.----------------------------------------------------------------------------------------
 
-quotes = soup.find_all(class_="text")
+# quotes = soup.find_all(class_="text")
 
-b = 0
+# b = 0
 
-for q in quotes:
-    b += 1
+# for q in quotes:
+#     b += 1
 
-print(f"lapā ir {b} citāti.")
+# print(f"lapā ir {b} citāti.")
 
-print(len(quotes))
+# print(len(quotes))
