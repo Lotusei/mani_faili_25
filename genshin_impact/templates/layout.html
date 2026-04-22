@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+
+    <header class = "augsa-koneineris">
+        <div class = "nosaukums">
+            <img src="{{ url_for('static', filename='images/gi_logo.jpg') }}" alt="Genshin Impact Logo" class="nosaukums" >
+        </div>
+        <div class = "bilde">
+            <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner" class="bilde">
+        </div>
+
+      {% block content %}{% endblock %}
+  </body>
+</html>

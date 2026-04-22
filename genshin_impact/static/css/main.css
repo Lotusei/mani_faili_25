@@ -1,0 +1,19 @@
+head{
+    margin:0;
+    padding: 0;
+    
+}
+
+.augsa-koneineris{
+    display: flex;
+    align-items: stretch;
+    width: 50%;
+    height: 100px;
+    background-color:white;
+    overflow: hidden;
+}
+.logo{
+    
+
+
+}
