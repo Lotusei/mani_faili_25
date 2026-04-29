@@ -1,19 +1,63 @@
+/* Noņem atkāpes */
 head{
     margin:0;
     padding: 0;
     
 }
 
+/* Bannera izskats */
 .augsa-koneineris{
     display: flex;
     align-items: stretch;
-    width: 50%;
-    height: 100px;
+    width: 100%;
+    height: 200px;
     background-color:white;
     overflow: hidden;
 }
-.logo{
-    
+
+/* Logo + nosaukuma izskats */
+.nosaukums{
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+.logo {
+    height: 80%; /* Logo būs nedaudz mazāks par header augstumu */
+    width: auto;
+}
+
+/* Bildes izskats */
+.bildes-izkats {
+    flex-grow: 1; /* Bilde aizpildīs visu atlikušo brīvo vietu */
+}
+
+.bilde {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* bilde aizpilda laukumu to nedeformējot */
+    object-position: center;
+}
 
 
+/* Navigācija zem bildēm */
+.navigacija {
+    background-color: rgba(73, 57, 87);
+    padding: 10px 20px;
+    display: flex;
+    clear: both;
+}
+
+.navigacija a {
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+.navigacija a:hover {
+    color: #ffd700; /* Zeltīta krāsa uzbraucot ar peli */
 }

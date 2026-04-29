@@ -1,0 +1,52 @@
+Pārveidotais api piemērs no mani_paraugi p2.html vēlākai izmantošanai
+
+
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Genshin Varoņi</title>
+</head>
+<body>
+    <h1>Varoņu saraksts</h1>
+    
+    {% if characters %}
+        <ul>
+            {% for vards in characters %}
+                <li>{{ vards }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Varoņi netika atrasti.</p>
+    {% endif %}
+
+</body>
+</html>
+
+
+
+
+from flask import Flask, render_template
+import requests
+
+app = Flask(__name__)
+
+@app.route('/')
+def get_characters():
+    try:
+        response = requests.get("https://genshin.jmp.blue/characters")
+        if response.status_code == 200:
+            # API atgriež sarakstu: ["albedo", "aloy", ...]
+            data = response.json() 
+            # Svarīgi: nododam mainīgo 'characters' uz HTML
+            return render_template('p2.html', characters=data)
+        else:
+            return f"API kļūda: {response.status_code}"
+    except Exception as e:
+        return f"Notika kļūda: {e}"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
