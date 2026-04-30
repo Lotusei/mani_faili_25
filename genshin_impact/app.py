@@ -9,6 +9,10 @@ app = Flask(__name__)           # 2. Izveido lietotnes instanci
 def home():
     return render_template('home.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # def jaunumi_skr():                    # 4. Funkcija, jaunumu skrāpēšanai
 #     url = "https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki" 
 # 

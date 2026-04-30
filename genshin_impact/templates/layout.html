@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     
     <link rel="stylesheet"
@@ -14,7 +14,13 @@
         <div class = "bildes-izskats">
             <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner" class="bilde">
         </div>
-
+    </header>
+    <nav class="navigacija"> 
+        <a href="/">Home</a>
+        <a href="/about">About</a> 
+        <a href="/nations">Nations</a> 
+        <a href="/characters">Characters</a> 
+    </nav>
       {% block content %}{% endblock %}
   </body>
 </html>

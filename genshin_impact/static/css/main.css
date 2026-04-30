@@ -5,6 +5,7 @@ head{
     
 }
 
+
 /* Bannera izskats */
 .augsa-koneineris{
     display: flex;
@@ -46,7 +47,8 @@ head{
 /* Navigācija zem bildēm */
 .navigacija {
     background-color: rgba(73, 57, 87);
-    padding: 10px 20px;
+    font-size: large;
+    padding: 15px 30px;
     display: flex;
     clear: both;
 }
