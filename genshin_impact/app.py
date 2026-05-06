@@ -13,6 +13,35 @@ def home():
 def about():
     return render_template('about.html')
 
+#--------------------------------------------------------------------------------------------------
+
+@app.route('/characters')
+def get_characters():
+    # 1. iegūstu varoņu vārdu sarakstu
+    try:
+        varonu_saraksts = requests.get("https://genshin.jmp.blue/characters")
+        visi_vardi = varonu_saraksts.json() if varonu_saraksts.status_code == 200 else []
+    except:
+        visi_vardi = []
+
+    # 2. Iegūstu izvēlētos datus par izvēlēto varoni
+    selected_name = request.args.get('character_id')
+    informacija = None
+
+    if selected_name:
+        try:
+            varonu_info = requests.get(f"https://genshin.jmp.blue/characters/{selected_name}")
+            if varonu_info.status_code == 200:
+                informacija = varonu_info.json()
+        except:
+            pass
+
+
+    return render_template('characters.html', names=visi_vardi, details=informacija)
+    
+
+#--------------------------------------------------------------------------------------------------
+
 # def jaunumi_skr():                    # 4. Funkcija, jaunumu skrāpēšanai
 #     url = "https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki" 
 # 

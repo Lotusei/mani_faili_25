@@ -2,4 +2,29 @@
 
 {% block content %}
 
+<!--* izveidoju varoņu izvēlni, kas ņem varoņu sarakstu no api -->
+<form method="GET" action="/characters">
+    <select name="character_id" id="characters" onchange="this.form.submit()">
+        <option value="">-- Choose a character --</option>
+        {% for name in names %}
+            <option value="{{ name }}">{{ name | capitalize }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<hr>
+
+{% if details %}
+    <div class="varonu-info">
+        <h2>{{ details.name }}</h2>
+        <p><strong>Vision:</strong> {{ details.vision }}</p>
+        <p><strong>Weapon:</strong> {{ details.weapon }}</p>
+        <p><strong>Constellation:</strong> {{ details.constellation }}</p>
+        <p><strong>Rarity:</strong> {{ details.rarity }} ★</p>
+        
+        <img src="https://genshin.jmp.blue/characters/{{ details.name | lower | replace(' ', '-') }}/card" 
+             alt="{{ details.name }}" style="max-width: 300px;">
+    </div>
+{% endif %}
+
 {% endblock %}
