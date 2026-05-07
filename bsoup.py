@@ -36,10 +36,10 @@ from bs4 import BeautifulSoup
 
 # 3.----------------------------------------------------------------------------------------
 
-url = 'http://quotes.toscrape.com'
-response = requests.get(url)
+# url = 'http://quotes.toscrape.com'
+# response = requests.get(url)
 
-soup = BeautifulSoup(response.text, 'lxml')
+# soup = BeautifulSoup(response.text, 'lxml')
 
 # name = soup.find_all(class_="author")
 

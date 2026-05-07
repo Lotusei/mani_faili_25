@@ -42,7 +42,33 @@ def get_characters():
 
 #--------------------------------------------------------------------------------------------------
 
-# def jaunumi_skr():                    # 4. Funkcija, jaunumu skrāpēšanai
+# 4. Funkcija, jaunumu skrāpēšanai paņemta no "mani paraugi" p6.py
+
+def jaunumi():
+    url = 'https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki'
+
+    headers = {'User-Agent': 'Mozilla/5.0'} # Dažas lapas bloķē pieprasījumus bez šī
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # konkrētais bloks, ko es vēlos skrāpēt
+    jaunumu_bloks = soup.find( class_='Mainpage-boarder events-gallery')
+
+    if jaunumu_bloks:
+        return jaunumu_bloks.decode_contents()
+    return "Jaunumi netika atrasti"
+
+@app.route('/')
+def index():
+    saturs = jaunumi()
+    return render_template('home.html', headlines=saturs)
+
+
+
+
+
+
+# def jaunumi_skr():                    
 #     url = "https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki" 
 # 
 # @app.route('/nations') 
