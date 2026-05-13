@@ -44,26 +44,45 @@ def get_characters():
 
 # 4. Funkcija, jaunumu skrāpēšanai paņemta no "mani paraugi" p6.py
 
-def jaunumi():
-    url = 'https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki'
+def skrapet_virsrakstus():
+    url = 'https://game8.co/games/Genshin-Impact/archives/316403'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    try:
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        konteiners = soup.find(class_='archive-style-wrapper')
+        
+        dati = []
+        if konteiners:
+            virsraksti = konteiners.find_all(['h3', 'h4'])
+            
+            for v in virsraksti:
+                teksts = v.get_text(strip=True)
+                tips = v.name 
+                
+                # Pievienojam pašreizējo virsrakstu sarakstam
+                dati.append({
+                    'teksts': teksts,
+                    'tips': tips
+                })
 
-    headers = {'User-Agent': 'Mozilla/5.0'} # Dažas lapas bloķē pieprasījumus bez šī
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
+                # PĀRBAUDE: Ja šī ir Snezhnaya, mēs pārtraucam ciklu
+                if "Snezhnaya" in teksts:
+                    break # Aptur skrāpēšanu pie šī vārda
+        
+        return dati
+    except Exception as e:
+        print(f"Kļūda: {e}")
+        return []
 
-    # konkrētais bloks, ko es vēlos skrāpēt
-    jaunumu_bloks = soup.find( class_='Mainpage-boarder events-gallery')
-
-    if jaunumu_bloks:
-        return jaunumu_bloks.decode_contents()
-    return "Jaunumi netika atrasti"
-
-@app.route('/')
+@app.route('/nations')
 def index():
-    saturs = jaunumi()
-    return render_template('home.html', headlines=saturs)
-
-
+    visi_virsraksti = skrapet_virsrakstus()
+    return render_template('nations.html', saraksts=visi_virsraksti)
 
 
 

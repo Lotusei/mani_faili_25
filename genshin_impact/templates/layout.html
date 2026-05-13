@@ -6,21 +6,28 @@
           href="{{ url_for('static', filename='css/main.css') }}">
   </head>
   <body>
-
+<!-- uztaisa atseviķsas klases katrai lietai, lai vieglāk visu var stilizēt css failā -->
     <header class = "augsa-koneineris">
+        <!-- viss kas ir par logo bildi -->
         <div class = "nosaukums">
             <img src="{{ url_for('static', filename='images/gi_logo.jpg') }}" alt="Genshin Impact Logo" class="logo" >
         </div>
+        <!-- viss kas ir par banera bildi -->
         <div class = "bildes-izskats">
             <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner" class="bilde">
         </div>
     </header>
+<!-- navigācijas līnija ar četrām pogām -->
     <nav class="navigacija"> 
         <a href="/">Home</a>
         <a href="/about">About</a> 
         <a href="/nations">Nations</a> 
         <a href="/characters">Characters</a> 
     </nav>
-      {% block content %}{% endblock %}
+    
+<!-- bloks kurā ievada mainīgo informāciju -->
+      {% block content %}
+      
+      {% endblock %}
   </body>
 </html>

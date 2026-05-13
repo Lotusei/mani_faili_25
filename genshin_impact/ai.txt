@@ -1,0 +1,268 @@
+--------------------- pārbaudu vai api vispār strādā --------------------------------------------
+
+
+# prompts:
+kā izsaukt un izmantot šo api py failā https://genshin.jmp.blue/characters
+mans kods nestrādā.
+
+# nolasa API "https://genshin.jmp.blue/" un parāda to HTML dokumentā
+
+from flask import Flask, render_template, request, jsonify
+import requests
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def get_joke():
+    response = requests.get("https://genshin.jmp.blue/characters")
+    if response.status_code == 200:
+        data = response.json()
+        varonis = data['value']
+        return render_template('p2.html', characters=varonis)
+    else:
+        return "Nevar saņemt varoni"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+un es nesaprotu kapēc.
+
+#------------------------------------------------------------------------------------------
+
+Man navigācijas līniju met vienā līnijā kopā ar manu banneri (logo+bildi). Es nezinu, kā šo problēmu risināt!
+
+mans bannera kods (layout.html) - nemainīt neko, bez vajadzības:
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+
+    <header class = "augsa-koneineris">
+        <div class = "nosaukums">
+            <img src="{{ url_for('static', filename='images/gi_logo.jpg') }}" alt="Genshin Impact Logo" class="logo" >
+        </div>
+        <div class = "bildes-izskats">
+            <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner" class="bilde">
+        </div>
+
+      {% block content %}{% endblock %}
+  </body>
+</html>
+
+un mans mājas lapas kods, kurā ir iekšā navigācijas līnija, kas lien iekšā banera līnijā (home.html):
+
+{% extends "layout.html" %}  <!-- Mantojam layout.html -->
+
+{% block content %}
+
+<body>
+ <nav class="navigacija"> 
+    <a href="/about">About</a> 
+    <a href="/nations">Nations</a> 
+    <a href="/characters">Characters</a> 
+</nav>
+</body>
+
+{% endblock %}
+
+#----------------------------------------------------------------------------------------------
+
+Man bija slinkums manuāli visu rakstīt
+
+
+Lūdzu uzraksti man doto kodu, bet mašīnu vietā ievieto varošu nosaukums.
+
+varoņu nosaukumi: "albedo","alhaitham","aloy","amber","arataki-itto","arlecchino","ayaka","ayato","baizhu","barbara","beidou","bennett","candace","charlotte","chevreuse","chiori","chongyun","clorinde","collei","cyno","dehya","diluc","diona","dori","emilie","eula","faruzan","fischl","freminet","furina","gaming","ganyu","gorou","hu-tao","jean","kachina","kaeya","kaveh","kazuha","keqing","kinich","kirara","klee","kokomi","kuki-shinobu","layla","lisa","lynette","lyney","mika","mona","mualani","nahida","navia","neuvillette","nilou","ningguang","noelle","qiqi","raiden","razor","rosaria","sara","sayu","sethos","shenhe","shikanoin-heizou","sigewinne","sucrose","tartaglia","thoma","tighnari","traveler-anemo","traveler-dendro","traveler-electro","traveler-geo","traveler-hydro","venti","wanderer","wriothesley","xiangling","xianyun","xiao","xingqiu","xinyan","yae-miko","yanfei","yaoyao","yelan","yoimiya","yun-jin","zhongli"
+
+kods, kas ir jāmaina: <option value="audi">Audi</option>
+
+#-------------------------------------------------------------------------------------------------------
+
+Kā es varu no api izvilkt varoņa vārdu un viņa bildi ar manis uztaisīto varoņu izvēlni. Man ir šāds kods:
+
+characters.html: {% block content %}
+
+<label for="characters"></label>
+
+<select name="characters" id="characters">
+  <option value="Choose a character">Choose a character</option>
+  <option value="albedo">Albedo</option>
+  <option value="alhaitham">Alhaitham</option>
+  <option value="aloy">Aloy</option>
+  <option value="amber">Amber</option>
+  <option value="arataki-itto">Arataki-itto</option>
+  <option value="arlecchino">Arlecchino</option>
+  <option value="ayaka">Ayaka</option>
+  <option value="ayato">Ayato</option>
+  <option value="baizhu">Baizhu</option>
+  <option value="barbara">Barbara</option>
+  <option value="beidou">Beidou</option>
+  <option value="bennett">Bennett</option>
+  <option value="candace">Candace</option>
+  <option value="charlotte">Charlotte</option>
+  <option value="chevreuse">Chevreuse</option>
+  <option value="chiori">Chiori</option>
+  <option value="chongyun">Chongyun</option>
+  <option value="clorinde">Clorinde</option>
+  <option value="collei">Collei</option>
+  <option value="cyno">Cyno</option>
+  <option value="dehya">Dehya</option>
+  <option value="diluc">Diluc</option>
+  <option value="diona">Diona</option>
+  <option value="dori">Dori</option>
+  <option value="emilie">Emilie</option>
+  <option value="eula">Eula</option>
+  <option value="faruzan">Faruzan</option>
+  <option value="fischl">Fischl</option>
+  <option value="freminet">Freminet</option>
+  <option value="furina">Furina</option>
+  <option value="gaming">Gaming</option>
+  <option value="ganyu">Ganyu</option>
+  <option value="gorou">Gorou</option>
+  <option value="hu-tao">Hu-tao</option>
+  <option value="jean">Jean</option>
+  <option value="kachina">Kachina</option>
+  <option value="kaeya">Kaeya</option>
+  <option value="kaveh">Kaveh</option>
+  <option value="kazuha">Kazuha</option>
+  <option value="keqing">Keqing</option>
+  <option value="kinich">Kinich</option>
+  <option value="kirara">Kirara</option>
+  <option value="klee">Klee</option>
+  <option value="kokomi">Kokomi</option>
+  <option value="kuki-shinobu">Kuki-shinobu</option>
+  <option value="layla">Layla</option>
+  <option value="lisa">Lisa</option>
+  <option value="lynette">Lynette</option>
+  <option value="lyney">Lyney</option>
+  <option value="mika">Mika</option>
+  <option value="mona">Mona</option>
+  <option value="mualani">Mualani</option>
+  <option value="nahida">Nahida</option>
+  <option value="navia">Navia</option>
+  <option value="neuvillette">Neuvillette</option>
+  <option value="nilou">Nilou</option>
+  <option value="ningguang">Ningguang</option>
+  <option value="noelle">Noelle</option>
+  <option value="qiqi">Qiqi</option>
+  <option value="raiden">Raiden</option>
+  <option value="razor">Razor</option>
+  <option value="rosaria">Rosaria</option>
+  <option value="sara">Sara</option>
+  <option value="sayu">Sayu</option>
+  <option value="sethos">Sethos</option>
+  <option value="shenhe">Shenhe</option>
+  <option value="shikanoin-heizou">Shikanoin-heizou</option>
+  <option value="sigewinne">Sigewinne</option>
+  <option value="sucrose">Sucrose</option>
+  <option value="tartaglia">Tartaglia</option>
+  <option value="thoma">Thoma</option>
+  <option value="tighnari">Tighnari</option>
+  <option value="traveler-anemo">Traveler-anemo</option>
+  <option value="traveler-dendro">Traveler-dendro</option>
+  <option value="traveler-electro">Traveler-electro</option>
+  <option value="traveler-geo">Traveler-geo</option>
+  <option value="traveler-hydro">Traveler-hydro</option>
+  <option value="venti">Venti</option>
+  <option value="wanderer">Wanderer</option>
+  <option value="wriothesley">Wriothesley</option>
+  <option value="xiangling">Xiangling</option>
+  <option value="xianyun">Xianyun</option>
+  <option value="xiao">Xiao</option>
+  <option value="xingqiu">Xingqiu</option>
+  <option value="xinyan">Xinyan</option>
+  <option value="yae-miko">Yae-miko</option>
+  <option value="yanfei">Yanfei</option>
+  <option value="yaoyao">Yaoyao</option>
+  <option value="yelan">Yelan</option>
+  <option value="yoimiya">Yoimiya</option>
+  <option value="yun-jin">Yun-jin</option>
+  <option value="zhongli">Zhongli</option>
+  
+</select>
+
+{% endblock %}
+
+
+AI man parādija, ka darakstu var ieguut no API
+
+#------------------------------------------------------
+
+
+Es centos izmantot beautiful soap no jau iepriekš dota piemēra, bet pēc tā pārveidošanas un pielāgošanas, tas nestrādā. Kas varētu būt problēma?
+
+home.html: {% extends "layout.html" %}  <!-- Mantojam layout.html -->
+
+{% block content %}
+
+<html>
+<head>
+</head>
+<body>
+    <ul>
+        {% for headline in headlines %}
+            <li>{{ jaunumi }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+{% endblock %}
+
+app.py: def jaunumi():
+    url = 'https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    jaunumu_linija = soup.find( class_='Mainpage-boarder events-gallery')
+    jaunumu_saraksts = [headline.text.strip() for headline in jaunumu_linija]
+    return jaunumu_saraksts
+
+@app.route('/')
+def index():
+    jaunumu_linija = jaunumi()
+    return render_template('home.html', headlines=jaunumu_linija)
+
+(turpināja nestrādāt. Pamanīju, ka problēma bija tāda, ka kodā vairākas klases bija ar vienu un to pašu nosaukumu)
+
+#------------------------------------------------------
+
+Lūdzu palīdzi man pielabot manu kodu un atrast manas kļūdas
+Es cenšos savā nations.html ielikt noskrāpētus datus no mājaslapas https://genshin-impact.fandom.com/wiki/Teyvat. Man neizdodas un es nesaprotu, kas ir problēma. Pārbaudi lapas kodu un pārliecinies, ka man viss ir pareizi.  Es cenšos noskrāpēt tabulu ar visām septiņām nācijām. Ar visām bildēm un uzrakstiem.
+
+Šis ir mans app.py kods def nacijas():
+    url = 'https://genshin-impact.fandom.com/wiki/Teyvat'
+
+    headers = {'User-Agent': 'Mozilla/5.0'} # Dažas lapas bloķē pieprasījumus bez šī
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # konkrētais bloks, ko es vēlos skrāpēt
+    naciju_bloks = soup.find( class_='table-wide')
+
+    if naciju_bloks:
+        return naciju_bloks.decode_contents()
+    return "Nācijas netika atrastas"
+
+@app.route('/nations')
+def index():
+    saturs = nacijas()
+    return render_template('nations.html', headlines=saturs)
+
+Un šis ir mans nations.html kods: 
+
+{% block content %}
+
+
+    <div class="noskrapetas-nacijas">
+        {# Filtrs 'safe' pasaka Flaskam, ka šis HTML ir uzticams un to drīkst renderēt #}
+        {{ saturs | safe }}
+    </div>
+
+
+{% endblock %}
+
